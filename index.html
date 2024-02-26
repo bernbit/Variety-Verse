@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variety Verse</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./img/meme-favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="meme-favicon.png" alt="meme-favicon" />
+      <div class="header-title">
+        <h2>VarietyVerse</h2>
+        <h4>You Click, I Generate</h4>
+      </div>
+    </header>
+    <main>
+      <section class="content">
+        <div id="meme-btn"></div>
+        <div id="joke-btn"></div>
+        <div id="quote-btn"></div>
+        <div id="riddle-btn"></div>
+
+        <div id="share-btn">
+          <button onclick="toTweet()">
+            <img src="img/twitter.png" alt="" />
+            <p>Tweet</p>
+          </button>
+        </div>
+        <div class="clear" onclick="clearScreen()">
+          <img src="img/clear.png" alt="" />
+        </div>
+        <div class="loader">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <div class="lower-section">
+        <div class="instruction">Click to Show</div>
+        <section class="options">
+          <button onclick="meme()" class="options-btn">
+            <img class="btn-img" src="img/meme-icon.png" alt="meme-icon" />MEME
+          </button>
+          <button onclick="quote()" class="options-btn">
+            <img
+              class="btn-img"
+              src="img/quotes-icon.png"
+              alt="quotes-icon"
+            />QUOTE
+          </button>
+
+          <button onclick="joke()" class="options-btn">
+            <img class="btn-img" src="img/joke-icon.png" alt="joke-icon" />JOKE
+          </button>
+          <button onclick="riddle()" class="options-btn">
+            <img
+              class="btn-img"
+              src="img/riddle-icon.png"
+              s
+              alt="riddle-icon"
+            />RIDDLE
+          </button>
+        </section>
+        <section class="reveal-btn">
+          <button onclick="reveal()">
+            <img src="img/reveal-answer.png" alt="" />RIDDLE ANSWER
+          </button>
+        </section>
+      </div>
+      <div class="main-modal hidden">
+        <div class="modal">
+          <div class="modal-header">
+            <img src="" class="modal-img" />
+            <h2 class="modal-title"></h2>
+          </div>
+
+          <div class="modal-text"></div>
+          <button class="modal-btn" onclick="showModal()">DISMISS</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: #3c3c3a;
+  --secondary: #f0a530;
+  --accent: #1da1f2;
+  --sidePadding: 6px;
+}
+html {
+  font-size: 16px;
+  font-family: Viga, sans-serif;
+}
+
+header {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 0.8rem;
+  padding: var(--sidePadding);
+  font-family: "Montserrat", sans-serif;
+}
+header img {
+  width: 45px;
+  height: 45px;
+}
+.header-title {
+  color: var(--secondary);
+}
+.header-title h2 {
+  letter-spacing: 1px;
+}
+.header-title h4 {
+  color: white;
+  font-weight: 400;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95vw;
+  height: 60vh;
+  padding: 20px;
+  background-color: var(--primary);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  word-break: normal;
+}
+
+.meme-image {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  border-radius: 10px;
+  max-width: 350px;
+  height: 350px;
+}
+
+.content #share-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 13px 12px 0;
+}
+
+.content #share-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.content #share-btn button {
+  background-color: var(--accent);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  padding: 10px;
+
+  color: white;
+}
+.content #share-btn button p {
+  font-weight: 600;
+}
+.content #share-btn button img {
+  width: 25px;
+  height: 25px;
+}
+
+/*Loader Style*/
+.hidden {
+  display: none;
+}
+
+.loader {
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  animation: bounce 1.3s linear infinite;
+}
+
+.dot:nth-child(1) {
+  left: -1.5rem;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.dot:nth-child(3) {
+  right: -2.5rem;
+  animation-delay: -0.8s;
+}
+
+@keyframes bounce {
+  0%,
+  66%,
+  100% {
+    transform: initial;
+  }
+
+  33% {
+    transform: translatey(-1rem);
+  }
+}
+
+/*Lower Section Style*/
+.lower-section {
+  margin-top: 5px;
+  width: 95vw;
+  height: 30vh;
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto repeat(3, 1fr);
+}
+
+.lower-section .instruction {
+  margin-bottom: 10px;
+}
+.lower-section .options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.lower-section .options .options-btn {
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.lower-section .options .options-btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.lower-section .options .options-btn img {
+  width: 35px;
+  height: 35px;
+}
+
+.lower-section .reveal-btn button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1.5px var(--secondary) solid;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  margin-top: 10px;
+}
+
+.lower-section .reveal-btn button img {
+  width: 40px;
+  height: 40px;
+}
+
+.lower-section .reveal-btn button:hover {
+  transition: 500ms;
+  padding: 5px 18px;
+  transform: translateY(-0px);
+  color: #fff;
+  background-color: #f0a530;
+  border: solid 2px #f0a530;
+}
+
+/*Clear Button Style*/
+.clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 12px 13px 0px 0;
+}
+
+.clear:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.clear img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Modal Design */
+.main-modal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal {
+  width: 90vw;
+  height: 40vh;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 50% 1fr 17%;
+  place-items: center;
+  font-family: "Monserrat", sans-serif;
+  overflow: hidden;
+}
+
+.modal .modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 8px;
+}
+
+.modal .modal-header .modal-img {
+  width: 80px;
+  height: 70px;
+}
+.modal .modal-text {
+  text-align: center;
+  font-size: 1.05rem;
+  padding: 0 40px 0 40px;
+}
+
+.modal .modal-btn {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.modal .modal-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-top: 15px;
+    flex-direction: row;
+    padding: 30px;
+  }
+  .content {
+    flex-basis: 60%;
+    width: 100vw;
+    height: 80vh;
+    padding: 20px;
+  }
+  .meme-image {
+    width: 550px;
+    height: 550px;
+  }
+  .lower-section {
+    flex-basis: 20%;
+    padding: 10px;
+  }
+
+  .modal {
+    width: 40vw;
+    height: 40vh;
+  }
+}
