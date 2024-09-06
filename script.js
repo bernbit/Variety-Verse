@@ -1,6 +1,8 @@
+const corsproxy = "https://corsproxy.io/?";
+
 const apiUrl = {
   memeAPI: "https://meme-api.com/gimme/wholesomememes",
-  quoteAPI: "https://api.quotable.io/random",
+  quoteAPI: `${corsproxy}https://zenquotes.io/api/random`,
   jokeAPI:
     "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single",
   riddleAPI: "https://riddles-api.vercel.app/random",
@@ -33,12 +35,12 @@ function meme() {
 function quote() {
   const quotes = document.querySelector("#quote-btn");
   fetchData(apiUrl.quoteAPI).then((data) => {
-    const quotesText = createElement("p", "id", "quoteContent", data.content);
+    const quotesText = createElement("p", "id", "quoteContent", data[0].q);
     const authorText = createElement(
       "p",
       "id",
       "quoteAuthor",
-      `- ${data.author}`
+      `- ${data[0].a}`
     );
     addStyle(authorText);
     clearAll();
@@ -79,7 +81,7 @@ function reveal() {
     titleB: "Missing Riddle",
     textA: "The riddle's secret is out – the answer has been revealed.",
     textB: "No riddle to solve here, the mystery is missing in action.",
-    img: "img/riddle-error.png",
+    img: "img/riddle-error.svg",
   };
 
   if (question && answer.hidden) {
@@ -110,7 +112,7 @@ function toTweet() {
   } else {
     const twitterModal = {
       title: "Content Unavailable",
-      text: "Unable to post tweet. Please select content to be included in your tweet before proceeding.",
+      text: "Select content to tweet before proceeding.",
       img: "img/errorTwitter.png",
     };
     showModal(twitterModal.title, twitterModal.text, twitterModal.img);
