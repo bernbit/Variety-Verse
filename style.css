@@ -9,7 +9,7 @@
 
 :root {
   --primary: #3c3c3a;
-  --secondary: #f0a530;
+  --secondary: #f48668;
   --accent: #1da1f2;
   --sidePadding: 6px;
 }
@@ -209,8 +209,8 @@ main {
   padding: 5px 18px;
   transform: translateY(-0px);
   color: #fff;
-  background-color: #f0a530;
-  border: solid 2px #f0a530;
+  background-color: var(--secondary);
+  border: solid 2px var(--secondary);
 }
 
 /*Clear Button Style*/
